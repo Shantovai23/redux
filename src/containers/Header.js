@@ -8,6 +8,7 @@ const Header = () => {
         <Link to='/'>
         <h2>ReduxShop</h2>
         </Link>
+        <Link to='/categories'><p style={{margin:'0 200px'}}>Categories</p></Link>
       </div>
     </div>
   );
