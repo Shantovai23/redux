@@ -1,9 +1,12 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React,{useEffect} from 'react'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios'
 import {useParams} from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { selectedProduct,removeSelectedProduct } from '../redux/actions/productsActions'
+import {useDispatch, useSelector } from 'react-redux'
+import {selectedProduct,removeSelectedProduct} from '../redux/actions/productsActions'
 
 
 const ProductDetail = () => {

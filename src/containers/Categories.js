@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
@@ -6,7 +7,7 @@ import {
   selectedCategory,
   selectedCategoryProductsstored,
 } from "../redux/actions/productsActions";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   const allCategories = useSelector(
@@ -18,7 +19,9 @@ const Categories = () => {
   const showProducts = useSelector(
     (state) => state.selectedCategoryProducts.selectedCategoryProducts
   );
+
   const dispatch = useDispatch();
+  
   const fetchAllCategories = async () => {
     try {
       const response = await axios.get(
@@ -45,16 +48,14 @@ const Categories = () => {
 
   useEffect(() => {
     fetchAllCategories();
-  }, []);
+  },[]);
   useEffect(() => {
     selectedCategoryProducts();
   }, [products]);
 
-
   const renderList = showProducts.map((product) => {
     const { id, title, image, price, category } = product;
     return (
-      
       <div className="four wide column" key={id}>
         <Link to={`/product/${id}`}>
           <div className="ui link cards">
@@ -71,7 +72,6 @@ const Categories = () => {
           </div>
         </Link>
       </div>
-    
     );
   });
 
@@ -97,10 +97,7 @@ const Categories = () => {
           );
         })}
       </select>
-      <div className='ui  grid container'>
-      {renderList}
-      </div>
-     
+      <div className="ui  grid container">{renderList}</div>
     </div>
   );
 };
